@@ -1,13 +1,13 @@
-import { createStore } from "redux";
+import { createStore } from "redux"
 
 const initialState = {
-  jugadores: [],
-  titulares: [],
-  sumplentes: []
-};
+  topPalettes: [],
+  latestPalettes: [],
+  randomPictures: []
+}
 
 const reducer = (state = initialState, action) => {
-  return state;
-};
+  return state
+}
 
-export default createStore(reducer);
+export default createStore(reducer)

@@ -1,9 +1,11 @@
-import React from "react";
+import React from "react"
+import Palette from "./Palette"
 
-const TopPalettes = () => {
+const TopPalettes = () => (
   <section>
     <h2>Top Palettes</h2>
-  </section>;
-};
+    <Palette />
+  </section>
+)
 
-export default TopPalettes;
+export default TopPalettes
