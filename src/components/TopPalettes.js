@@ -1,11 +1,26 @@
-import React from "react"
-import Palette from "./Palette"
+import React, { useEffect } from "react";
+import Palette from "./Palette";
+import { connect } from "react-redux";
+import { getTopPalettes } from "./calls/Dbcalls";
 
-const TopPalettes = () => (
-  <section>
-    <h2>Top Palettes</h2>
-    <Palette />
-  </section>
-)
+const TopPalettes = ({ topPalettes, getTopPalettes }) => {
+  useEffect(() => {
+    getTopPalettes();
+  }, []);
+  return (
+    <section>
+      <h2>Top Palettes</h2>
+      <Palette palette={topPalettes} />
+    </section>
+  );
+};
 
-export default TopPalettes
+const mapStateToProps = state => ({
+  topPalettes: state.topPalettes
+});
+
+const mapDispatchToProps = {
+  getTopPalettes
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopPalettes);
