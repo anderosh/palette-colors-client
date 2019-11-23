@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import Palette from "./Palette";
-import { connect } from "react-redux";
-import { getTopPalettes } from "./calls/Dbcalls";
+import React, { useEffect } from 'react';
+import Palette from './Palette/Palette';
+import { connect } from 'react-redux';
+import { getTopPalettes } from './serverReq';
 
 const TopPalettes = ({ topPalettes, getTopPalettes }) => {
   useEffect(() => {
