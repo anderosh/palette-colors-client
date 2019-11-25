@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react"
+import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 
 const ImagePicker = ({ images, imagePicked }) => (
   <div>
@@ -15,20 +15,20 @@ const ImagePicker = ({ images, imagePicked }) => (
         </div>
       ))}
   </div>
-);
+)
 
 const mapStateToProps = state => ({
   imagePicked: state.imagePicked,
   colorsNewPalette: state.colorsNewPalette
-});
+})
 
 const mapDispatchToProps = dispatch => ({
   imagePicked(url) {
     dispatch({
-      type: 'SET_IMG_PICKED',
+      type: "SET_IMG_PICKED",
       payload: url
-    });
+    })
   }
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImagePicker);
+export default connect(mapStateToProps, mapDispatchToProps)(ImagePicker)

@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react"
+import axios from "axios"
 // import { getRandomPics } from "./calls/Dbcalls";
-import ImagePicker from './ImagePicker';
+import ImagePicker from "./ImagePicker"
 
 function NewPalette() {
-  const [imgs, setImgs] = useState([]);
+  const [imgs, setImgs] = useState([])
 
   useEffect(() => {
     axios
-      .get('http://192.168.1.56:3001/new-palette')
-      .then(({ data }) => setImgs(data));
-  }, []);
+      .get("http://localhost:3001/new-palette")
+      .then(({ data }) => setImgs(data))
+  }, [])
 
   return (
     <main>
@@ -24,7 +24,7 @@ function NewPalette() {
       <button name="landscapes">Landscapes</button>
       <button name="textures">Textures</button>
     </main>
-  );
+  )
 }
 
-export default NewPalette;
+export default NewPalette

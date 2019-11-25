@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { getColors, savePalette } from './serverReq';
-import { Link } from 'react-router-dom';
-import Palette from './Palette/Palette';
+import React, { useEffect, useState } from "react"
+import { connect } from "react-redux"
+import { getColors, savePalette } from "./serverReq"
+import { Link } from "react-router-dom"
+import Palette from "./Palette/Palette"
 
 const GetColors = ({
   imagePicked,
@@ -10,15 +10,15 @@ const GetColors = ({
   colorsNewPalette,
   savePalette
 }) => {
-  const [paletteName, setPaletteName] = useState('');
+  const [paletteName, setPaletteName] = useState("")
 
   useEffect(() => {
-    getColors(imagePicked);
-  }, []);
+    getColors(imagePicked)
+  }, [])
 
   const handleName = event => {
-    setPaletteName(event.target.value);
-  };
+    setPaletteName(event.target.value)
+  }
 
   const handleSubmit = () => {
     const palette = {
@@ -26,10 +26,10 @@ const GetColors = ({
       label: colorsNewPalette,
       colors: colorsNewPalette,
       likes: 0
-    };
-    savePalette(palette);
-    console.log(palette);
-  };
+    }
+    savePalette(palette)
+    console.log(palette)
+  }
 
   return (
     <div>
@@ -38,8 +38,10 @@ const GetColors = ({
       <div>
         <h2>{paletteName}</h2>
 
-        {colorsNewPalette && colorsNewPalette.length > 0 && colorsNewPalette}
-        <Palette palette={colorsNewPalette} />
+        {colorsNewPalette &&
+          colorsNewPalette.length > 0 &&
+          colorsNewPalette.map(p => console.log(p))}
+
         <input
           type="text"
           name="paletteName"
@@ -51,15 +53,15 @@ const GetColors = ({
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = state => ({
   imagePicked: state.imagePicked,
   colorsNewPalette: state.colorsNewPalette
-});
+})
 const mapDispatchToProps = {
   getColors,
   savePalette
-};
-export default connect(mapStateToProps, mapDispatchToProps)(GetColors);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(GetColors)
