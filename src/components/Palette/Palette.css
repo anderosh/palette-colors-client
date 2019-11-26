@@ -1,0 +1,50 @@
+.Palette {
+  display: inline-block;
+  margin: 15px 15px;
+  padding: 10px 20px;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 2px 2px 5px rgb(225, 225, 225);
+  border-radius: 5px;
+}
+
+.Palette-name {
+  font-family: 'Domine', serif;
+  margin: 10px 0px;
+}
+
+.Palette-background {
+  height: 100px;
+  background-color: burlywood;
+}
+
+.Palette-colors {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7em;
+}
+
+.Palette-labels {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7em;
+  color: #032539;
+  font-family: 'Domine', serif;
+}
+
+.Palette-buttons {
+  margin: 5px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+}
+
+.Palette-buttons-likes {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #1c768f;
+}
+
+.Palette-buttons-fav {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #fa991c;
+}

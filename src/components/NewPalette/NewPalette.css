@@ -1,0 +1,25 @@
+div > h2 {
+  margin-left: 15px;
+}
+
+.search-container {
+  display: block;
+}
+
+.button-tag {
+  all: unset;
+  margin: 5px 0 5px 15px;
+  padding: 5px 10px;
+  color: #1c768f;
+  border: 1px solid #1c768f;
+  border-radius: 3px;
+}
+
+.button-tag:hover {
+  background-color: #eaeaea;
+  position: relative;
+}
+
+.random-img {
+  display: block;
+}

@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16;
+  font-family: 'Open Sans', sans-serif;
+  color: #032539;
+  background-color: rgb(253, 233, 230)";
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1500px;
+}

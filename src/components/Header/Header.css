@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  height: 60px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  align-items: center;
+  background-color: #eaeaea;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(228, 228, 228);
+  color: #032539;
+}
+a {
+  color: inherit;
+}
+
+.navigator ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navigator a {
+  margin: 0px 5px;
+  text-decoration: none;
+}
+
+.New-palette {
+  padding: 8px 8px;
+  color: white;
+  background-color: #1c768f;
+  border-radius: 3px;
+}
+
+.New-palette:hover {
+  background-color: white;
+  color: #1c768f;
+}
