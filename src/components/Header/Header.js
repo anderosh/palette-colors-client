@@ -15,7 +15,7 @@ const Header = () => (
           <a href="#">Perfil</a>
         </li>
         <li>
-          <a href="#">My Palettes</a>
+          <a href="/my_palettes">My Palettes</a>
         </li>
         <li>
           <a href="/New_Palette" className="New-palette">

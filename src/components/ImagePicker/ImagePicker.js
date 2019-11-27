@@ -15,7 +15,7 @@ const ImagePicker = ({ images, imagePicked }) => (
               className="img-use-button"
               onClick={() => imagePicked(i.urls.small)}
             >
-              Use it!
+              Get colors
             </button>
           </Link>
         </div>

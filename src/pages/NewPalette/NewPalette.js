@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ImagePicker from '../ImagePicker/ImagePicker';
+import ImagePicker from '../../components/ImagePicker/ImagePicker';
 import './NewPalette.css';
 
-const handleBotton = e => {
-  console.log(e.target.name);
-};
+const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 function NewPalette() {
   const [imgs, setImgs] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://192.168.1.56:3001/new-palette')
+      .get(`${baseURL}/build-new-palette`, {
+        headers: {
+          authorization: localStorage.getItem('token')
+        }
+      })
       .then(({ data }) => setImgs(data));
   }, []);
+
+  const handleBotton = e => {
+    const category = e.target.name;
+    axios
+      .get(`${baseURL}/build-new-palette:${category}`, {
+        headers: {
+          authorization: localStorage.getItem('token')
+        }
+      })
+      .then(({ data }) => setImgs(data));
+  };
 
   return (
     <div className="container">
@@ -51,7 +64,6 @@ function NewPalette() {
             Textures
           </button>
         </div>
-        <h2 className="random-img">Random Images</h2>
       </div>
       <ImagePicker images={imgs} />
     </div>

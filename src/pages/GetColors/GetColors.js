@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { getColors, savePalette } from './serverReq';
+import { getColors, savePalette } from '../../components/serverReq';
 import { Link } from 'react-router-dom';
-import Palette from './Palette/Palette';
+import Palette from '../../components/Palette/Palette';
+import './GetColors.css';
 
 const GetColors = ({
   imagePicked,
@@ -28,33 +29,32 @@ const GetColors = ({
       likes: 0
     };
     savePalette(palette);
-    console.log(palette);
   };
 
-  console.log(colorsNewPalette);
-
   return (
-    <div>
-      <h1>New Palette</h1>
-      <img src={imagePicked}></img>
-      <div>
-        <h2>{paletteName}</h2>
+    <div className="container">
+      <div className="new-palette">
+        <img src={imagePicked}></img>
+        <div>
+          <h2>{paletteName}</h2>
+          {colorsNewPalette &&
+            colorsNewPalette.tags &&
+            colorsNewPalette.tags.length > 0 && (
+              <Palette palette={{ colors: colorsNewPalette.tags }} />
+            )}
 
-        {colorsNewPalette &&
-          colorsNewPalette.tags &&
-          colorsNewPalette.tags.length > 0 && (
-            <Palette palette={{ colors: colorsNewPalette.tags }} />
-          )}
-
-        <input
-          type="text"
-          name="paletteName"
-          placeholder="Name"
-          onChange={handleName}
-        ></input>
-        <Link to="/">
-          <button onClick={handleSubmit}>Save Palette</button>
-        </Link>
+          <input
+            type="text"
+            name="paletteName"
+            placeholder="Name"
+            onChange={handleName}
+          ></input>
+          <Link to="/">
+            <button className="save-palette" onClick={handleSubmit}>
+              Save Palette
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

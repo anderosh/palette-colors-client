@@ -1,0 +1,10 @@
+.save-palette {
+  all: unset;
+  display: block;
+  margin: 30px auto;
+  padding: 8px 8px;
+  cursor: pointer;
+  color: white;
+  background-color: #1c768f;
+  border-radius: 3px;
+}

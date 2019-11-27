@@ -1,41 +1,48 @@
-import { createStore, applyMiddleware } from "redux"
-import ReduxThunk from "redux-thunk"
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
 
 const initialState = {
+  user: {},
+  myPalettes: [],
   topPalettes: [],
   latestPalettes: [],
   randomPictures: [],
-  imagePicked: "",
+  imagePicked: '',
   colorsNewPalette: {}
-}
+};
 
 const reducer = (state = initialState, action) => {
-  console.log(action)
+  console.log(action);
   switch (action.type) {
-    case "GET_TOP_PALETTES":
+    case 'GET_TOP_PALETTES':
       return {
         ...state,
         topPalettes: action.payload
-      }
-    case "GET_LATEST_PALETTES":
+      };
+    case 'GET_LATEST_PALETTES':
       return {
         ...state,
         latestPalettes: action.payload
-      }
-    case "SET_IMG_PICKED":
+      };
+    case 'SET_IMG_PICKED':
       return {
         ...state,
         imagePicked: action.payload
-      }
-    case "SET_NEW_COLORS":
+      };
+    case 'SET_NEW_COLORS':
       return {
         ...state,
         colorsNewPalette: action.payload
-      }
+      };
+    case 'GET_MY_PALETTES':
+      return {
+        ...state,
+        myPalettes: action.payload
+      };
     default:
-      return state
+      return state;
   }
   // console.log(action);
-}
+};
 
-export default createStore(reducer, applyMiddleware(ReduxThunk))
+export default createStore(reducer, applyMiddleware(ReduxThunk));
